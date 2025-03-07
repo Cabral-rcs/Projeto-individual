@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.min.js"></script>
+    <script src="scenes/jogo.js"></script>
+    <script src="scenes/Fim.js"></script>
+    <script src="scenes/Inicio.js"></script>
+    <script src="scenes/Comojogar.js"></script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;  
+        }
+    </style>
+    <title>Robuzz</title>
+</head>
+<body>
+    <script>
+
+        // Defino as configurações base do jogo
+        const config = { 
+            type: Phaser.AUTO,
+            width: 800,
+            heigth: 800,  
+            physics: {
+                default: 'arcade',
+                arcade: {
+                    gravity: {
+                        y : 300,
+                        },
+                        debug: false
+                }
+            },
+            // Defino quais serão as cenas do jogo
+            scene:[Inicio, Jogo, Comojogar, Fim ]
+        }
+
+        // Começo o jogo
+        var game = new Phaser.Game(config);
+    </script>
+</body>
+</html>
